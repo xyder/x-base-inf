@@ -1,3 +1,3 @@
 # x-pro-inf
 ============
-Will be use to dump info.
+Will be used to dump info.
