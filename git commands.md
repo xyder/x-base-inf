@@ -1,5 +1,13 @@
-#### Some Git commands I encountered and found worthy to remember:
+#### Git commands and info:
 --------------------
+
+#### Settings:
+- set credentials (append --global to set them globally):  
+**git config user.name _"name"_**  
+**git config user.email _"email@email.com"_**  
+- set line ending (accepts true/false/input; input only pushes linux style endings):  
+**git config --global core.autocrlf _input_**  
+
 #### Clone a repo into a directory (*dir* can be relative):
   **git clone _\<url\> \<dir\>_**  
 
