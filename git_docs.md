@@ -45,6 +45,9 @@ git remote update --prune
 ```
 #### Other:
 ```
+# clear all changes made and revert to a clean working directory
+git checkout .
+
 # will stage a merge with all commits squashed
 git merge --squash <name>
 
