@@ -1,35 +1,69 @@
 #### Git commands and info:
---------------------
+----------------------------
 
 #### Settings:
-- set credentials (append --global to set them globally):  
-**git config user.name _"name"_**  
-**git config user.email _"email@email.com"_**  
-- set line ending (accepts true/false/input; input only pushes linux style endings):  
-**git config --global core.autocrlf _input_**  
+- set credentials (append _--global_ to set them globally):
+```
+git config user.name "name"
+git config user.email "email@email.com"
+```
+- set line ending (accepts _true/false/input_; _input_ only pushes linux style endings):
+```
+git config --global core.autocrlf input
+```
 
-#### Clone a repo into a directory (*dir* can be relative):
-  **git clone _\<url\> \<dir\>_**  
+#### Clone a repo into a directory (_dir_ can be relative):
+```
+git clone <url> <dir>
+```
 
-#### Remotes management:  
-**git remote -v**   
-**git remote rm _\<name\>_**   
-**git remote add _\<name\> \<url\>_**   
-**git remote rename _\<name\>_**   
-**git remote show _\[name\]_**   
+#### Remotes management:
+```
+git remote -v
+git remote rm <name>
+git remote add <name> <url>
+git remote rename <name>
+git remote show [name]
+```
 
 #### Maintenance:
-**git fsck** *# validate repo and check dangling objects. Use --lost-found for lost commits, --unreachable for unreachable*  
-**git fsck --no-reflogs** *# for commits refered by reflog but not attached to any branch (once they expire they get cleaned by git gc)*  
-**git show _\<sha\>_** *# show what something contains*  
-**git gc** *# Compact repo. Can use --aggressive. Use --prune=now to prune all loose objects and not wait for them to expire*
-**git remote update --prune** *# remote tracking branches*
+```
+# validate repo and check dangling objects. Use --lost-found for lost commits, --unreachable for unreachable
+git fsck
 
-#### Other:  
-**git merge --squash _\<name\>_** *# will stage a merge with all commits squashed*  
-**git config --global credential.helper wincred** *# set to cache auth credentials for about 15 mins*  
-**git branch --set-upstream-to=_\<remote-name\>/\<branch-name\> \<branch-name\>_** *# sets the remote tracking branch*  
-**git push _\<remote-name\> \<local-branch\>\[:remote-branch\]_**  
-**git status -u no** *# check local rep status relative to remote*  
-**git clean -f -d** *# add -x to delete ignored files too, use -n to dry-run*  
-**git reset _\<remote-name\>/\<branch-name\>_** *# resets to the last common commit*  
+# for commits refered by reflog but not attached to any branch (once they expire they get cleaned by git gc)
+git fsck --no-reflogs
+
+# show what something contains
+git show <sha>
+
+# Compact repo. Can use --aggressive. Use --prune=now to prune all loose objects and not wait for them to expire
+git gc
+
+# remote tracking branches
+git remote update --prune
+```
+
+#### Other:
+```
+# will stage a merge with all commits squashed
+git merge --squash <name>
+
+# set to cache auth credentials for about 15 mins
+git config --global credential.helper wincred
+
+# sets the remote tracking branch
+git branch --set-upstream-to=<remote-name>/<branch-name> <branch-name>
+
+# push to a specific remote and branch
+git push <remote-name> <local-branch>[:remote-branch]
+
+# check local rep status relative to remote
+git status -u no
+
+# add -x to delete ignored files too, use -n to dry-run
+git clean -f -d
+
+# resets to the last common commit
+git reset <remote-name>/<branch-name>
+```
