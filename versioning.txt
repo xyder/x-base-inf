@@ -1,0 +1,14 @@
+
+Versioning:
+  Public:
+    MAJOR.MINOR.REVISION.BUILD
+      MAJOR - when making changes which break backwards compatibility
+      MINOR - introduces new features but still backwards compatible
+      REVISION - bugfixes or fixes that are backwards compatible
+      BUILD - distinguishes between particular builds (optional)
+
+  Internal - used in house to determine build for easy access when debugging:
+    YEAR.MONTH.DAY.BUILD
+
+Notes:
+- start with 0.1.0
